@@ -75,7 +75,7 @@ GameObject:
   - component: {fileID: 555188489432107117}
   - component: {fileID: 8090847488450120274}
   m_Layer: 0
-  m_Name: Weapon_Blaster
+  m_Name: Weapon_Cannon
   m_TagString: Untagged
   m_Icon: {fileID: 5132851093641282708, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
@@ -140,7 +140,7 @@ MonoBehaviour:
   ShellPoolSize: 1
   AmmoReloadRate: 16
   AmmoReloadDelay: 3
-  MaxAmmo: 16
+  MaxAmmo: 999
   AutomaticReleaseOnCharged: 0
   MaxChargeDuration: 2
   AmmoUsedOnStartCharge: 1
