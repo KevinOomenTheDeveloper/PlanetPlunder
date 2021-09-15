@@ -2,7 +2,10 @@ fileFormatVersion: 2
 guid: ccdc92982023a4643aeb6449ae64a735
 ModelImporter:
   serializedVersion: 20200
-  internalIDToNameTable: []
+  internalIDToNameTable:
+  - first:
+      74: 2877760967308115609
+    second: weapon_flintlock|weapon_flintlock_fire
   externalObjects: {}
   materials:
     materialImportMode: 2
