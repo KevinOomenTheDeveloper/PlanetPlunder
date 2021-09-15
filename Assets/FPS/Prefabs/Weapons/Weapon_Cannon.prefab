@@ -74,6 +74,7 @@ GameObject:
   - component: {fileID: 8745372878802205896}
   - component: {fileID: 555188489432107117}
   - component: {fileID: 8090847488450120274}
+  - component: {fileID: 7211352539257879096}
   m_Layer: 0
   m_Name: Weapon_Cannon
   m_TagString: Untagged
@@ -128,7 +129,7 @@ MonoBehaviour:
   DelayBetweenShots: 2
   BulletSpreadAngle: 0
   BulletsPerShot: 1
-  RecoilForce: 2
+  RecoilForce: 0
   AimZoomRatio: 0.5
   AimOffset: {x: 0, y: 0.075, z: 0}
   AutomaticReload: 1
@@ -145,7 +146,7 @@ MonoBehaviour:
   MaxChargeDuration: 2
   AmmoUsedOnStartCharge: 1
   AmmoUsageRateWhileCharging: 2
-  WeaponAnimator: {fileID: 0}
+  WeaponAnimator: {fileID: 7211352539257879096}
   MuzzleFlashPrefab: {fileID: 748781637555137343, guid: 3f5b545b9a1e74c418b061bba5bb9e2c,
     type: 3}
   UnparentMuzzleFlash: 0
@@ -350,6 +351,25 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!95 &7211352539257879096
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2225486910712267859}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 34d8f646ff95c6c49b27419f80a3a212, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &6867164317952318007
 GameObject:
   m_ObjectHideFlags: 0
