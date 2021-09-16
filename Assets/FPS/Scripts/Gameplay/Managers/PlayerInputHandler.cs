@@ -124,7 +124,7 @@ namespace Unity.FPS.Gameplay
 
         public bool GetAimInputHeld()
         {
-            if (CanProcessInput())
+            /*if (CanProcessInput())
             {
                 bool isGamepad = Input.GetAxis(GameConstants.k_ButtonNameGamepadAim) != 0f;
                 bool i = isGamepad
@@ -133,6 +133,7 @@ namespace Unity.FPS.Gameplay
                 return i;
             }
 
+            return false;*/
             return false;
         }
 
