@@ -113,11 +113,11 @@ MonoBehaviour:
   WeaponName: Flintlock Pistol
   WeaponIcon: {fileID: 21300000, guid: 85506d834b716aa4cbd029c65ea0a7da, type: 3}
   CrosshairDataDefault:
-    CrosshairSprite: {fileID: 21300000, guid: e881aa18189b12f4e915fc5b14ddc421, type: 3}
+    CrosshairSprite: {fileID: 21300000, guid: 76ffceefe806b254192acdca61953fa7, type: 3}
     CrosshairSize: 55
     CrosshairColor: {r: 1, g: 1, b: 1, a: 0.38431373}
   CrosshairDataTargetInSight:
-    CrosshairSprite: {fileID: 21300000, guid: e881aa18189b12f4e915fc5b14ddc421, type: 3}
+    CrosshairSprite: {fileID: 21300000, guid: 76ffceefe806b254192acdca61953fa7, type: 3}
     CrosshairSize: 40
     CrosshairColor: {r: 1, g: 0, b: 0, a: 1}
   WeaponRoot: {fileID: 1505447205160222267}
@@ -138,8 +138,8 @@ MonoBehaviour:
   EjectionPort: {fileID: 0}
   ShellCasingEjectionForce: 2
   ShellPoolSize: 1
-  AmmoReloadRate: 2
-  AmmoReloadDelay: 2
+  AmmoReloadRate: 0.5
+  AmmoReloadDelay: 0
   MaxAmmo: 1
   AutomaticReleaseOnCharged: 0
   MaxChargeDuration: 2
@@ -420,7 +420,7 @@ MeshFilter:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6867164318175680851}
-  m_Mesh: {fileID: -2924472869623080110, guid: ccdc92982023a4643aeb6449ae64a735, type: 3}
+  m_Mesh: {fileID: 6063770850439677207, guid: ccdc92982023a4643aeb6449ae64a735, type: 3}
 --- !u!23 &6867164318177937299
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -440,7 +440,8 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 88610acb9651e9345a311992ed4db885, type: 2}
+  - {fileID: -2679015059692817245, guid: ccdc92982023a4643aeb6449ae64a735, type: 3}
+  - {fileID: -8388176142677651000, guid: ccdc92982023a4643aeb6449ae64a735, type: 3}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
