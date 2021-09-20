@@ -4,10 +4,7 @@ using UnityEngine;
 
 public class fuelPickup : MonoBehaviour
 {
-
-    [Header("Parameters")]
-    [Tooltip("Amount of health to heal on pickup")]
-    public float fuelCount;
+    public int fuelValue;
 
     // Start is called before the first frame update
     void Start()
@@ -23,9 +20,9 @@ public class fuelPickup : MonoBehaviour
 
     public void OnTriggerEnter(Collider other)
     {
+        GameObject.Find("GameManager").GetComponent<fuelManager>().fuelCounter += fuelValue;
         Destroy(gameObject);
-        fuelCount++;
-        Debug.Log(fuelCount);
+        Debug.Log(GameObject.Find("GameManager").GetComponent<fuelManager>().fuelCounter);
 
     }
 }
