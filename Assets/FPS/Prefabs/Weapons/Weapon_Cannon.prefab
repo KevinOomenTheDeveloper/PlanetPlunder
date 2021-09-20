@@ -74,6 +74,7 @@ GameObject:
   - component: {fileID: 8745372878802205896}
   - component: {fileID: 555188489432107117}
   - component: {fileID: 8090847488450120274}
+  - component: {fileID: 7211352539257879096}
   m_Layer: 0
   m_Name: Weapon_Cannon
   m_TagString: Untagged
@@ -111,13 +112,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   WeaponName: Cannon
-  WeaponIcon: {fileID: 21300000, guid: 3c187e19c32c13542ba8a0c1a3a88ece, type: 3}
+  WeaponIcon: {fileID: 21300000, guid: cd459a7791d578142bbda61271c0a65b, type: 3}
   CrosshairDataDefault:
-    CrosshairSprite: {fileID: 21300000, guid: e881aa18189b12f4e915fc5b14ddc421, type: 3}
+    CrosshairSprite: {fileID: 21300000, guid: 76ffceefe806b254192acdca61953fa7, type: 3}
     CrosshairSize: 55
     CrosshairColor: {r: 1, g: 1, b: 1, a: 0.38431373}
   CrosshairDataTargetInSight:
-    CrosshairSprite: {fileID: 21300000, guid: e881aa18189b12f4e915fc5b14ddc421, type: 3}
+    CrosshairSprite: {fileID: 21300000, guid: 76ffceefe806b254192acdca61953fa7, type: 3}
     CrosshairSize: 40
     CrosshairColor: {r: 1, g: 0, b: 0, a: 1}
   WeaponRoot: {fileID: 1505447205160222267}
@@ -125,10 +126,10 @@ MonoBehaviour:
   ShootType: 0
   ProjectilePrefab: {fileID: 8924682559891268397, guid: 3c6b27d949cdda749892906e1f1d1b27,
     type: 3}
-  DelayBetweenShots: 2
+  DelayBetweenShots: 0
   BulletSpreadAngle: 0
   BulletsPerShot: 1
-  RecoilForce: 2
+  RecoilForce: 0
   AimZoomRatio: 0.5
   AimOffset: {x: 0, y: 0.075, z: 0}
   AutomaticReload: 1
@@ -138,18 +139,18 @@ MonoBehaviour:
   EjectionPort: {fileID: 0}
   ShellCasingEjectionForce: 2
   ShellPoolSize: 1
-  AmmoReloadRate: 3
-  AmmoReloadDelay: 3
+  AmmoReloadRate: 0.34
+  AmmoReloadDelay: 0
   MaxAmmo: 1
   AutomaticReleaseOnCharged: 0
   MaxChargeDuration: 2
   AmmoUsedOnStartCharge: 1
   AmmoUsageRateWhileCharging: 2
-  WeaponAnimator: {fileID: 0}
+  WeaponAnimator: {fileID: 7211352539257879096}
   MuzzleFlashPrefab: {fileID: 748781637555137343, guid: 3f5b545b9a1e74c418b061bba5bb9e2c,
     type: 3}
   UnparentMuzzleFlash: 0
-  ShootSfx: {fileID: 8300000, guid: 53d2238f4c4b2aa4f8e559c7af9e0126, type: 3}
+  ShootSfx: {fileID: 8300000, guid: e3c1cddeded720e48b459d21b5f6dc9e, type: 3}
   ChangeWeaponSfx: {fileID: 8300000, guid: 7b83d61917ac1224f942a0609b1221f2, type: 3}
   UseContinuousShootSound: 0
   ContinuousShootStartSfx: {fileID: 0}
@@ -350,6 +351,25 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!95 &7211352539257879096
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2225486910712267859}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 34d8f646ff95c6c49b27419f80a3a212, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &6867164317952318007
 GameObject:
   m_ObjectHideFlags: 0
