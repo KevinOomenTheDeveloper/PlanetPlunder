@@ -114,11 +114,11 @@ MonoBehaviour:
   WeaponName: Cannon
   WeaponIcon: {fileID: 21300000, guid: cd459a7791d578142bbda61271c0a65b, type: 3}
   CrosshairDataDefault:
-    CrosshairSprite: {fileID: 21300000, guid: e881aa18189b12f4e915fc5b14ddc421, type: 3}
+    CrosshairSprite: {fileID: 21300000, guid: 76ffceefe806b254192acdca61953fa7, type: 3}
     CrosshairSize: 55
     CrosshairColor: {r: 1, g: 1, b: 1, a: 0.38431373}
   CrosshairDataTargetInSight:
-    CrosshairSprite: {fileID: 21300000, guid: e881aa18189b12f4e915fc5b14ddc421, type: 3}
+    CrosshairSprite: {fileID: 21300000, guid: 76ffceefe806b254192acdca61953fa7, type: 3}
     CrosshairSize: 40
     CrosshairColor: {r: 1, g: 0, b: 0, a: 1}
   WeaponRoot: {fileID: 1505447205160222267}
@@ -126,7 +126,7 @@ MonoBehaviour:
   ShootType: 0
   ProjectilePrefab: {fileID: 8924682559891268397, guid: 3c6b27d949cdda749892906e1f1d1b27,
     type: 3}
-  DelayBetweenShots: 2
+  DelayBetweenShots: 0
   BulletSpreadAngle: 0
   BulletsPerShot: 1
   RecoilForce: 0
@@ -139,8 +139,8 @@ MonoBehaviour:
   EjectionPort: {fileID: 0}
   ShellCasingEjectionForce: 2
   ShellPoolSize: 1
-  AmmoReloadRate: 3
-  AmmoReloadDelay: 3
+  AmmoReloadRate: 0.34
+  AmmoReloadDelay: 0
   MaxAmmo: 1
   AutomaticReleaseOnCharged: 0
   MaxChargeDuration: 2
