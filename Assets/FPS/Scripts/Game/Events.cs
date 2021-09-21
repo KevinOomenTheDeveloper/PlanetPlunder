@@ -42,6 +42,12 @@ namespace Unity.FPS.Game
         public int RemainingEnemyCount;
     }
 
+    public class FuelPickUpEvent : GameEvent
+    {
+        public GameObject Fuel;
+        public int RemainingFuelCount;
+    }
+
     public class PickupEvent : GameEvent
     {
         public GameObject Pickup;

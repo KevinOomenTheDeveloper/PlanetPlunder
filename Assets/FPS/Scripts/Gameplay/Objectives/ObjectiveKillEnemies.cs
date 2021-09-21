@@ -5,61 +5,53 @@ namespace Unity.FPS.Gameplay
 {
     public class ObjectiveKillEnemies : Objective
     {
-        [Tooltip("Chose whether you need to kill every enemies or only a minimum amount")]
-        public bool MustKillAllEnemies = true;
+        //[Tooltip("Chose whether you need to kill every enemies or only a minimum amount")]
+        public int MinimumFuel = 10;
 
-        [Tooltip("If MustKillAllEnemies is false, this is the amount of enemy kills required")]
-        public int KillsToCompleteObjective = 5;
+        //[Tooltip("If MustKillAllEnemies is false, this is the amount of enemy kills required")]
+        public int StartingFuel = 0;
 
         [Tooltip("Start sending notification about remaining enemies when this amount of enemies is left")]
-        public int NotificationEnemiesRemainingThreshold = 3;
+        public int NotificationRemainingFuelThreshold = 10;
 
-        int m_KillTotal;
+        public bool LeaveRequirementsMet = false;
+
+        int m_FuelTotal;
 
         protected override void Start()
         {
             base.Start();
 
-            EventManager.AddListener<EnemyKillEvent>(OnEnemyKilled);
+            EventManager.AddListener<FuelPickUpEvent>(OnFuelPickedUp);
 
             // set a title and description specific for this type of objective, if it hasn't one
             if (string.IsNullOrEmpty(Title))
-                Title = "Eliminate " + (MustKillAllEnemies ? "all the" : KillsToCompleteObjective.ToString()) +
-                        " enemies";
+                Title = "Atleast get " + MinimumFuel.ToString() +
+                        " more fuel!";
 
-            if (string.IsNullOrEmpty(Description))
-                Description = GetUpdatedCounterAmount();
+            //if (string.IsNullOrEmpty(Description))
+            //    Description = GetUpdatedCounterAmount();
         }
 
-        void OnEnemyKilled(EnemyKillEvent evt)
+        void OnFuelPickedUp(FuelPickUpEvent evt)
         {
             if (IsCompleted)
                 return;
 
-            m_KillTotal++;
+            m_FuelTotal++;
 
-            if (MustKillAllEnemies)
-                KillsToCompleteObjective = evt.RemainingEnemyCount + m_KillTotal;
-
-            int targetRemaining = MustKillAllEnemies ? evt.RemainingEnemyCount : KillsToCompleteObjective - m_KillTotal;
+            int targetRemaining = MinimumFuel - m_FuelTotal;
 
             // update the objective text according to how many enemies remain to kill
-            if (targetRemaining == 0)
+            if (targetRemaining <= 0)
             {
-                CompleteObjective(string.Empty, GetUpdatedCounterAmount(), "Objective complete : " + Title);
-            }
-            else if (targetRemaining == 1)
-            {
-                string notificationText = NotificationEnemiesRemainingThreshold >= targetRemaining
-                    ? "One enemy left"
-                    : string.Empty;
-                UpdateObjective(string.Empty, GetUpdatedCounterAmount(), notificationText);
+                LeaveRequirementsMet = true;
             }
             else
             {
                 // create a notification text if needed, if it stays empty, the notification will not be created
-                string notificationText = NotificationEnemiesRemainingThreshold >= targetRemaining
-                    ? targetRemaining + " enemies to kill left"
+                string notificationText = NotificationRemainingFuelThreshold >= targetRemaining
+                    ? targetRemaining + " Fuel left"
                     : string.Empty;
 
                 UpdateObjective(string.Empty, GetUpdatedCounterAmount(), notificationText);
@@ -68,12 +60,12 @@ namespace Unity.FPS.Gameplay
 
         string GetUpdatedCounterAmount()
         {
-            return m_KillTotal + " / " + KillsToCompleteObjective;
+            return m_FuelTotal + " / " + MinimumFuel;
         }
 
         void OnDestroy()
         {
-            EventManager.RemoveListener<EnemyKillEvent>(OnEnemyKilled);
+            EventManager.RemoveListener<FuelPickUpEvent>(OnFuelPickedUp);
         }
     }
 }
