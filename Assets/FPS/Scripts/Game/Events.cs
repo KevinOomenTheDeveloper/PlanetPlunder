@@ -12,6 +12,7 @@ namespace Unity.FPS.Game
         public static GameOverEvent GameOverEvent = new GameOverEvent();
         public static PlayerDeathEvent PlayerDeathEvent = new PlayerDeathEvent();
         public static EnemyKillEvent EnemyKillEvent = new EnemyKillEvent();
+        public static FuelPickUpEvent FuelPickUpEvent = new FuelPickUpEvent();
         public static PickupEvent PickupEvent = new PickupEvent();
         public static AmmoPickupEvent AmmoPickupEvent = new AmmoPickupEvent();
         public static DamageEvent DamageEvent = new DamageEvent();
@@ -51,6 +52,7 @@ namespace Unity.FPS.Game
     public class PickupEvent : GameEvent
     {
         public GameObject Pickup;
+        public int Fuel = 0;
     }
 
     public class AmmoPickupEvent : GameEvent

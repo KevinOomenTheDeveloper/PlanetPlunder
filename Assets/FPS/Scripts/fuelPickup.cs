@@ -19,15 +19,16 @@ public class fuelPickup : MonoBehaviour
         
     }
 
-    /*public void OnTriggerEnter(Collider other)
+    public void OnTriggerEnter(Collider other)
     {
-        GameObject.Find("GameManager").GetComponent<fuelManager>().fuelCounter += fuelValue;
-        EnemyKillEvent evt = Events.Fuel;
-        evt.Enemy = enemyKilled.gameObject;
-        evt.RemainingEnemyCount = enemiesRemainingNotification;
+        //GameObject.Find("GameManager").GetComponent<fuelManager>().fuelCounter += fuelValue;
+        PickupEvent evt = Events.PickupEvent;
+        evt.Pickup = this.gameObject;
+        evt.Fuel = fuelValue;
+        //evt.RemainingFuelCount = enemiesRemainingNotification;
         EventManager.Broadcast(evt);
-        Destroy(gameObject);
-        Debug.Log(GameObject.Find("GameManager").GetComponent<fuelManager>().fuelCounter);
+        GameObject.Destroy(this.gameObject);
+        //Debug.Log(GameObject.Find("GameManager").GetComponent<fuelManager>().fuelCounter);
 
-    }*/
+    }
 }
